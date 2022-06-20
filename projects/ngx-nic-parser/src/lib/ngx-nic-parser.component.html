@@ -6,8 +6,8 @@
            class="form-control" [formControl]="nicNumber"
            (keydown.enter)="nicParser()">
     <div *ngIf="nicNumber?.touched && nicNumber?.invalid" class="error-message">
-      <div *ngIf="nicNumber?.errors?.required">Name is required!</div>
-      <div *ngIf="nicNumber?.errors?.pattern">Invalid name!</div>
+      <div *ngIf="nicNumber?.errors?.required">{{requiredMessage}}</div>
+      <div *ngIf="nicNumber?.errors?.pattern">{{patternErrorMessage}}</div>
     </div>
   </div>
 </form>

@@ -13,6 +13,8 @@ import {Response} from "./response";
 export class NgxNicParserComponent implements OnInit {
   @Input() id = '';
   @Input() title = '';
+  @Input() requiredMessage = '';
+  @Input() patternErrorMessage = '';
   @Input() placeholder = '';
   @Input() clearNICNumber = '';
   @Output() checkDob = new EventEmitter<Response>();
@@ -41,7 +43,7 @@ export class NgxNicParserComponent implements OnInit {
         const $gender = this.getGender($dayText);
         $dayText = $dayText > 500 ? $dayText - 500 : $dayText;
         const $obj = this.getBirthMonthAndDate($dayText);
-        const $res = {...$obj, $year, $gender};
+        const $res = {...$obj, year:$year, gender:$gender};
         this.checkDob.emit(new Response({code: 200, message: ''}, $res));
       }
     }
@@ -88,9 +90,9 @@ export class NgxNicParserComponent implements OnInit {
     }
   }
 
-  public setBirthMonthAndDate($day: any, $monthName: string, $monthNumber: number) {
+  public setBirthMonthAndDate(day: any, monthName: string, monthNumber: number) {
     return new BirthMonthAndDate(
-      $day, $monthName, $monthNumber
+      day, monthName, monthNumber
     )
   }
 
