@@ -2,6 +2,7 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {NgxNicParserComponent} from './ngx-nic-parser.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -10,8 +11,8 @@ import {CommonModule} from "@angular/common";
   ],
   imports: [
     ReactiveFormsModule,
-    FormsModule,
-    CommonModule
+    BrowserModule,
+    FormsModule
   ],
   exports: [
     NgxNicParserComponent
