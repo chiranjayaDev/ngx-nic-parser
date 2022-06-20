@@ -5,33 +5,32 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
-    "paths": {
-      "ngx-nic-parser": [
-        "dist/ngx-nic-parser/ngx-nic-parser",
-        "dist/ngx-nic-parser"
-      ]
-    },
     "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "module": "esnext",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "ngx-nic-parser": [
+        "dist/ngx-nic-parser"
+      ],
+      "ngx-nic-parser/*": [
+        "dist/ngx-nic-parser/*"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"
     ]
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }
