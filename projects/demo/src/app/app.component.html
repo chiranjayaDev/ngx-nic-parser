@@ -1,0 +1,11 @@
+<input type="text" class="form-control">
+<div class="form-group col-md-6">
+  <ngx-nic-parser
+    [title]="'NIC Number'"
+    [placeholder]="'Insert your nic number'"
+    (checkDob)="generate($event)"
+    [id]="'nic'"
+    [patternErrorMessage]="'Invalid pattern!'"
+    [requiredMessage]="'Nic Number is required!'"
+  ></ngx-nic-parser>
+</div>
