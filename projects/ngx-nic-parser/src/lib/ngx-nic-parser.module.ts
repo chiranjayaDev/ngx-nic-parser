@@ -10,12 +10,11 @@ import {BrowserModule} from "@angular/platform-browser";
     NgxNicParserComponent
   ],
   imports: [
-    ReactiveFormsModule,
-    BrowserModule,
-    FormsModule
+   CommonModule,
+    ReactiveFormsModule,FormsModule
   ],
   exports: [
-    NgxNicParserComponent
+    NgxNicParserComponent,ReactiveFormsModule,FormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
