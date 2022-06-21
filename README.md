@@ -53,6 +53,22 @@ export class AppComponent {
 }
 
 ```
+### Success Response
+```js
+{
+    "status": {
+        "code": 200,
+        "message": ""
+    },
+    "response": {
+        "day": 9,
+        "monthName": "JUNE",
+        "month": 6,
+        "year": 1999,
+        "gender": "Male"
+    }
+}
+```
 
 ## Inputs
 | Name                    | Type      | Default      | Description                                                                                                                                                                                                                          |
