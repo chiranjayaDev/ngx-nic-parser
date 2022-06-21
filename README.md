@@ -1,27 +1,71 @@
-# NgxNicParser
+## Calculate DOB/Gender for Srilankan National Identity Card using Angular
+[![NPM version][npm-image]][npm-url]
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+## Getting started
 
-## Development server
+#### Step 1: Install [ng-bootstrap](https://ng-bootstrap.github.io/#/getting-started)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+   ng add @ng-bootstrap/ng-bootstrap
+```
 
-## Code scaffolding
+#### Step 2: Install ngx-nic-parser
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+    npm install ngx-nic-parser --save
+```
+https://www.npmjs.com/package/ngx-nic-parser
+## Example usage:
+Add the NgxNicParserModule to the imports of the module.
+```js
+      import {NgxNicParserModule} from "ngx-nic-parser";
 
-## Build
+      @NgModule({
+        imports: [
+          NgxNicParserModule
+        ]
+      })
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Add the element to your HTML:
+```html
 
-## Running unit tests
+<ngx-nic-parser
+  [title]="'title'"
+  [placeholder]="'placeholder'"
+  (checkDob)="generate($event)"
+  [id]="'id'"
+  [patternErrorMessage]="invalid pattern!'"
+  [requiredMessage]="'is required!'">
+</ngx-nic-parser>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Running end-to-end tests
+And add this to your ts file:
+```js
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+export class AppComponent {
+  generate($event: any) {
+    console.log($event);
+  }
+}
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Inputs
+| Name                    | Type      | Default      | Description                                                                                                                                                                                                                          |
+|-------------------------|---------- | ------------ |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `title`     | string |        null      | Label Name                                                                                                                                                                                                |
+| `placeholder`             | string|       null       | placeholder for the input field.                                                                                                                                                                                                          |
+| `id`              | string    |     null         | Id for input field. |
+| `patternErrorMessage`                | string    |   null        | Error Message when input an incorrect pattern.                                                                                                         |
+| `requiredMessage`           | string    |   null    | Field is required message.                                                                                                                                                                |
+## Outputs
+
+| Name                    | Type              | Description |
+| ----------------------- | ----------------- | ----------- |
+| `checkDob`           | method    | Method to calculate DOB |
+
+[npm-url]: https://www.npmjs.com/package/ngx-nic-parser
+[npm-image]: https://img.shields.io/npm/v/ngx-nic-parser?style=flat-square
