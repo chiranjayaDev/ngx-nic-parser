@@ -1,6 +1,7 @@
 ## Calculate DOB/Gender for Srilankan National Identity Card using Angular
 [![NPM version][npm-image]][npm-url]
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
+[![The MIT License](https://img.shields.io/npm/dt/ngx-nic-parser?style=flat-square)]()
 
 ## Getting started
 
