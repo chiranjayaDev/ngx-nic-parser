@@ -5,6 +5,7 @@ export class BirthMonthAndDate {
     public month:number,
     public year?:number,
     public gender?:string,
+    public weekDay?:string,
   ) {
   }
 }

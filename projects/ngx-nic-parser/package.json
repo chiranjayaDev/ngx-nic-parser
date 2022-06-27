@@ -1,7 +1,7 @@
 {
   "name": "ngx-nic-parser",
-  "version": "0.1.1",
-  "description": "A calculator of Date of birt and gender using NIC in SriLanka using Angular",
+  "version": "0.1.2",
+  "description": "A calculator of Date of birth and gender using NIC in SriLanka using Angular",
   "author": {
     "name": "Chiranjaya Denuwan",
     "email": "chiranjayadenuwan@gmail.com"
@@ -24,6 +24,7 @@
     "angular 11",
     "angular 12",
     "nic",
+    "lanka nic",
     "nicparser",
     "ngx-nic-parser",
     "nic to dob",

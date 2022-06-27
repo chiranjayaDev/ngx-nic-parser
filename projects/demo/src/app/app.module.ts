@@ -2,7 +2,7 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {NgxNicParserModule} from "ngx-nic-parser";
+import {NgxNicParserModule} from "../../../ngx-nic-parser/src/lib/ngx-nic-parser.module";
 
 @NgModule({
   declarations: [

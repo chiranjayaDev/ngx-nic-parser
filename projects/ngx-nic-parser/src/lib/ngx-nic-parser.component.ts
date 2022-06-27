@@ -7,7 +7,7 @@ import {Response} from "./response";
 @Component({
   selector: 'ngx-nic-parser',
   templateUrl: './ngx-nic-parser.component.html',
-  styleUrls:['./ngx-nic-parser.component.css'],
+  styleUrls: ['./ngx-nic-parser.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class NgxNicParserComponent implements OnInit {
@@ -23,7 +23,7 @@ export class NgxNicParserComponent implements OnInit {
     nic: new FormControl('', [Validators.required, Validators.pattern("^([0-9]{9}[x|X|v|V]|[0-9]{12})")])
   });
 
-  get nicNumber():any {
+  get nicNumber(): any {
     return this.nicForm.get('nic');
   }
 
@@ -43,7 +43,8 @@ export class NgxNicParserComponent implements OnInit {
         const $gender = this.getGender($dayText);
         $dayText = $dayText > 500 ? $dayText - 500 : $dayText;
         const $obj = this.getBirthMonthAndDate($dayText);
-        const $res = {...$obj, year:$year, gender:$gender};
+        const $dayName = this.getWeekDay($year, $obj.month, $obj.day);
+        const $res = {...$obj, year: $year, gender: $gender, weekDay: $dayName};
         this.checkDob.emit(new Response({code: 200, message: ''}, $res));
       }
     }
@@ -116,4 +117,7 @@ export class NgxNicParserComponent implements OnInit {
     return [31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
   }
 
+  public getWeekDay($year: number, $month: number, $day: number): string {
+    return new Date($year, $month, $day).toLocaleString('en-us', {weekday: 'long'});
+  }
 }
