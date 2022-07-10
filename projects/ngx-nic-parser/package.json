@@ -33,12 +33,12 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0",
+    "@angular/common": ">=12.2.0",
+    "@angular/core": ">=12.2.0",
     "@ng-bootstrap/ng-bootstrap": ">=4.0.0",
     "bootstrap": ">=4.0.0"
   },
-  "dependencies": {
-    "tslib": "^2.1.0"
+  "scripts": {
+    "postinstall": "ngcc"
   }
 }
