@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nic-parser';
+
+  generate($event: any) {
+    console.log($event);
+  }
 }

@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "ngx-nic-parser": {
+      "root": "projects/ngx-nic-parser",
+      "sourceRoot": "projects/ngx-nic-parser/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-nic-parser/tsconfig.lib.json",
+            "project": "projects/ngx-nic-parser/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-nic-parser/src/test.ts",
+            "tsConfig": "projects/ngx-nic-parser/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-nic-parser/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-nic-parser/tsconfig.lib.json",
+              "projects/ngx-nic-parser/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nic-parser"

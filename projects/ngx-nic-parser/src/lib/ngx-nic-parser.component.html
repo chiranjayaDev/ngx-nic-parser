@@ -1,0 +1,13 @@
+<form [formGroup]="nicForm">
+  <div class="form-group">
+    <label for="{{id}}">{{title}}</label>
+    <input placeholder="{{placeholder}}"
+           type="text" id="{{id}}" name="{{id}}"
+           class="form-control" [formControl]="nicNumber"
+           (keydown.enter)="nicParser()">
+    <div *ngIf="nicNumber?.touched && nicNumber?.invalid" class="error-message">
+      <div *ngIf="nicNumber?.errors?.required">{{requiredMessage}}</div>
+      <div *ngIf="nicNumber?.errors?.pattern">{{patternErrorMessage}}</div>
+    </div>
+  </div>
+</form>
