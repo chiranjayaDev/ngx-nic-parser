@@ -3,5 +3,9 @@
   "dest": "../../dist/ngx-nic-parser",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "bootstrap",
+    "@ng-bootstrap/ng-bootstrap"
+  ]
 }

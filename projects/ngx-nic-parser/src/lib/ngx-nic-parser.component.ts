@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Month} from "./month";
 import {BirthMonthAndDate} from "./birth-month-and-date";
@@ -8,7 +8,6 @@ import {Response} from "./response";
   selector: 'ngx-nic-parser',
   templateUrl: './ngx-nic-parser.component.html',
   styleUrls: ['./ngx-nic-parser.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class NgxNicParserComponent implements OnInit {
   @Input() id = '';
