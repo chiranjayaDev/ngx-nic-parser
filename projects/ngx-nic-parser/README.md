@@ -1,24 +1,89 @@
-# NgxNicParser
+## Calculate DOB/Gender for Srilankan National Identity Card using Angular
+[![NPM version][npm-image]][npm-url]
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
+[![The MIT License](https://img.shields.io/npm/dt/ngx-nic-parser?style=flat-square)]()
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+## Getting started
 
-## Code scaffolding
+#### Step 1: Install [ng-bootstrap](https://ng-bootstrap.github.io/#/getting-started)
 
-Run `ng generate component component-name --project ngx-nic-parser` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-nic-parser`.
-> Note: Don't forget to add `--project ngx-nic-parser` or else it will be added to the default project in your `angular.json` file. 
+```bash
+   ng add @ng-bootstrap/ng-bootstrap
+```
 
-## Build
+#### Step 2: Install ngx-nic-parser
 
-Run `ng build ngx-nic-parser` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+    npm install ngx-nic-parser --save
+```
 
-## Publishing
+## Example usage:
+Add the NgxNicParserModule to the imports of the module.
+```js
+      import {NgxNicParserModule} from "ngx-nic-parser";
 
-After building your library with `ng build ngx-nic-parser`, go to the dist folder `cd dist/ngx-nic-parser` and run `npm publish`.
+      @NgModule({
+        imports: [
+          NgxNicParserModule
+        ]
+      })
+```
 
-## Running unit tests
+Add the element to your HTML:
+```html
 
-Run `ng test ngx-nic-parser` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<ngx-nic-parser
+  [title]="'title'"
+  [placeholder]="'placeholder'"
+  (checkDob)="generate($event)"
+  [id]="'id'"
+  [patternErrorMessage]="'invalid pattern!'"
+  [requiredMessage]="'is required!'">
+</ngx-nic-parser>
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+And add this to your ts file:
+```js
+
+export class AppComponent {
+  generate($event: any) {
+    console.log($event);
+  }
+}
+
+```
+### Success Response
+```js
+{
+    "status": {
+        "code": 200,
+        "message": ""
+    },
+    "response": {
+        "day": 9,
+        "monthName": "JUNE",
+        "month": 6,
+        "year": 1999,
+        "gender": "Male",
+        "weekDay": "Friday"
+    }
+}
+```
+
+## Inputs
+| Name                    | Type      | Default      | Description                                                                                                                                                                                                                          |
+|-------------------------|---------- | ------------ |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `title`     | string |        null      | Label Name                                                                                                                                                                                                |
+| `placeholder`             | string|       null       | placeholder for the input field.                                                                                                                                                                                                          |
+| `id`              | string    |     null         | Id for input field. |
+| `patternErrorMessage`                | string    |   null        | Error Message when input an incorrect pattern.                                                                                                         |
+| `requiredMessage`           | string    |   null    | Field is required message.                                                                                                                                                                |
+## Outputs
+
+| Name                    | Type              | Description |
+| ----------------------- | ----------------- | ----------- |
+| `checkDob`           | method    | Method to calculate DOB |
+
+[npm-url]: https://www.npmjs.com/package/ngx-nic-parser
+[npm-image]: https://img.shields.io/npm/v/ngx-nic-parser?style=flat-square

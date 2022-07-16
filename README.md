@@ -37,7 +37,7 @@ Add the element to your HTML:
   [placeholder]="'placeholder'"
   (checkDob)="generate($event)"
   [id]="'id'"
-  [patternErrorMessage]="invalid pattern!'"
+  [patternErrorMessage]="'invalid pattern!'"
   [requiredMessage]="'is required!'">
 </ngx-nic-parser>
 
@@ -65,7 +65,8 @@ export class AppComponent {
         "monthName": "JUNE",
         "month": 6,
         "year": 1999,
-        "gender": "Male"
+        "gender": "Male",
+        "weekDay": "Friday"
     }
 }
 ```
