@@ -11,7 +11,7 @@
    ng add @ng-bootstrap/ng-bootstrap
 ```
 
-#### Step 2: Install ngx-nic-parser
+#### Step 2: Install npm for ngx-nic-parser
 
 ```bash
     npm install ngx-nic-parser --save
